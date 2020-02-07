@@ -62,10 +62,14 @@ class Collection extends Component implements ArrayAccess, Iterator, Countable
      */
     public function __construct(array $data = [], $config = [])
     {
-        $this->_data = $data;
+        $this->setData($data);
         parent::__construct($config);
     }
 
+    protected function setData($data){
+        $this->_data = $data;
+    }
+    
     /**
      * @return array data contained in this collection.
      */
